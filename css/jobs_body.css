@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.jobs {
+    font-family: poppins;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 20px;
+    gap: 20px;
+}
+
+
+/* button for create job  */
+
+.big-btn {
+    height: 160px;
+    width: 256px;
+    background-color: #00ADEF;
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.big-btn:hover {
+    background-color: #058FC4;
+    cursor: pointer;
+}
+
+.big-btn p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.big-btn img {
+    margin-top: 25px;
+}
+
+
+/* job list  */
+
+.job {
+    height: 160px;
+    width: 256px;
+    border: 1px solid #00ADEF;
+    background: #E6F7FE;
+    color: black;
+    border-radius: 6px;
+}
+
+
+/* inside job styling */
+
+.job {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.job h1 {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 8px;
+    color: 323232;
+}
+
+.job p {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: 6A6262;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.primary-btn {
+    background: #00ADEF;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.secondary-btn {
+    background: white;
+    padding: 8px 24px;
+    border: 1px solid #00ADEF;
+    border-radius: 6px;
+    color: #00ADEF;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.primary-btn:hover {
+    background: #058FC4;
+}
+
+.secondary-btn:hover {
+    background: red;
+    color: white;
+    border: none;
+}
+
+.body-area {
+    margin: 20px 35px;
+}
+
+input {
+    margin-bottom: 20px;
+    width: 400px;
+    height: 40px;
+}
+
+textarea {
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+.submit {
+    background-color: #00ADEF;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #058FC4;
+}
+
+.jobs a {
+    text-decoration: none !important;
+}
+
+.title {
+    font-size: 24px;
+}
