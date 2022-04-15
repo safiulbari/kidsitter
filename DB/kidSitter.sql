@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 24, 2022 at 07:47 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.3.20
+-- Host: 127.0.0.1
+-- Generation Time: Apr 15, 2022 at 10:26 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kidSitter`
+-- Database: `kidsitter`
 --
 
 -- --------------------------------------------------------
@@ -100,20 +100,20 @@ INSERT INTO `interviews` (`interview_no`, `job_id`, `sitter_id`, `selection`, `d
 -- --------------------------------------------------------
 
 --
--- Table structure for table `JOBPayment`
+-- Table structure for table `jobpayment`
 --
 
-CREATE TABLE `JOBPayment` (
+CREATE TABLE `jobpayment` (
   `payment_number` int(11) NOT NULL,
   `job_id` int(11) DEFAULT NULL,
   `amount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `JOBPayment`
+-- Dumping data for table `jobpayment`
 --
 
-INSERT INTO `JOBPayment` (`payment_number`, `job_id`, `amount`) VALUES
+INSERT INTO `jobpayment` (`payment_number`, `job_id`, `amount`) VALUES
 (1, 1, 12);
 
 -- --------------------------------------------------------
@@ -125,14 +125,12 @@ INSERT INTO `JOBPayment` (`payment_number`, `job_id`, `amount`) VALUES
 CREATE TABLE `jobs` (
   `job_id` int(11) NOT NULL,
   `client_id` int(11) DEFAULT NULL,
-  `job_day` int(11) DEFAULT NULL,
+  `job_day` varchar(20) DEFAULT NULL,
   `title` varchar(40) DEFAULT NULL,
   `details` longtext DEFAULT NULL,
-  `R_with_paitent` varchar(40) DEFAULT NULL,
-  `kid_disease` varchar(40) DEFAULT NULL,
+  `R_with_client` varchar(40) DEFAULT NULL,
   `kid_age` int(11) DEFAULT NULL,
-  `pay_amount` int(11) DEFAULT NULL,
-  `requirements` varchar(100) DEFAULT NULL,
+  `salary_range` varchar(20) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `completed` varchar(20) DEFAULT NULL,
   `SelectSitter_id` int(11) DEFAULT NULL,
@@ -143,14 +141,8 @@ CREATE TABLE `jobs` (
 -- Dumping data for table `jobs`
 --
 
-INSERT INTO `jobs` (`job_id`, `client_id`, `job_day`, `title`, `details`, `R_with_paitent`, `kid_disease`, `kid_age`, `pay_amount`, `requirements`, `address`, `completed`, `SelectSitter_id`, `payment_status`) VALUES
-(1, 2, 50, 'nurse', 'blank', 'father', 'heart', 50, 3444, 'no', 'dhaka', NULL, 1, 'payment done'),
-(2, 3, 30, 'xxx', 'blank', 'father', 'kidney', 45, 500000, 'no', 'jessore', NULL, NULL, NULL),
-(3, 2, 24, 'job', 'blank', 'sister', 'heart', 10, 10, 'no', 'dhaka', NULL, NULL, NULL),
-(4, 2, 24, 'no job', 'blank', 'sister', 'heart', 10, 10, 'no', 'dhaka', NULL, NULL, NULL),
-(5, 2, 24, 'cg', 'blank', 'sister', 'kidney', 45, 5656565, 'no', 'khulna', NULL, NULL, NULL),
-(6, 2, 100, 'asd', 'sdf', 'sister', 'heart', 44, 500, 'no', 'sylhet', NULL, NULL, NULL),
-(7, 4, 24, 'a', 'b', 'c', 'c', 45, 10, 'no', 'jessore', NULL, NULL, NULL);
+INSERT INTO `jobs` (`job_id`, `client_id`, `job_day`, `title`, `details`, `R_with_client`, `kid_age`, `salary_range`, `address`, `completed`, `SelectSitter_id`, `payment_status`) VALUES
+(19, 2, '5', 'Looking for a babysitter for 4 years boy', 'I was actually looking for child caring person who can control my little cute boy', 'Mother', 6, '4000-6000', '6 no road, Bashudhara RA, Dhaka', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -225,9 +217,9 @@ ALTER TABLE `interviews`
   ADD KEY `fkNR` (`sitter_id`);
 
 --
--- Indexes for table `JOBPayment`
+-- Indexes for table `jobpayment`
 --
-ALTER TABLE `JOBPayment`
+ALTER TABLE `jobpayment`
   ADD PRIMARY KEY (`payment_number`),
   ADD KEY `fkjp` (`job_id`);
 
@@ -281,16 +273,16 @@ ALTER TABLE `interviews`
   MODIFY `interview_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `JOBPayment`
+-- AUTO_INCREMENT for table `jobpayment`
 --
-ALTER TABLE `JOBPayment`
+ALTER TABLE `jobpayment`
   MODIFY `payment_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `sitter`
