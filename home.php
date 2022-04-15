@@ -1,4 +1,15 @@
+<?php
+    $client_id = 2;
 
+    require_once('dbconfig.php');
+    $connect = mysqli_connect( HOST, USER, PASS, DB )
+		or die("Can not connect");
+
+
+    $results = mysqli_query( $connect, "SELECT * FROM jobs where client_id = $client_id" )
+		or die("Can not execute query");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
