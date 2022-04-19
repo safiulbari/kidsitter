@@ -2,7 +2,7 @@
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
     //we will process here
-    
+    exit;
     if(   isset($_POST['myemail']) 
        && isset($_POST['mypass'])
        && !empty($_POST['myemail'])

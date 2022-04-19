@@ -36,7 +36,9 @@
             <a class="link flex-center" href="#">BabySitter</a>
             <a class="link flex-center" href="#">Payment</a>
             <a class="link flex-center" href="#">Babyfood</a>
-            <a class="link flex-center" href="#">My Profile</a>
+            <a class="link flex-center" href="http://localhost/kidSitter/kidsitter/clientProfile.php">My Profile</a>
+            
+
         </div>
     </div>
     <div class="jobs">

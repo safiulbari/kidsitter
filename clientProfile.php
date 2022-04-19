@@ -144,7 +144,7 @@
                     </tr>
               
             </table>
-            <form action="edit_prof.php"  method="post">
+            <form action="editprof.php"  method="post">
                 <button class="btn btn-default" style="float:center;" name=submit1>Edit </button>
            </form> 
           
