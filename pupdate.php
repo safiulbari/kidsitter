@@ -43,7 +43,7 @@ $uid = 9;
             header("Location:clientProfile.php?=successful");
         }else{
             echo "Wrong";
-        }
+         }
 
 
 ?>
