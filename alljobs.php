@@ -88,10 +88,8 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
                 <?php
                 } ?>
 
-
-
-
             </tbody>
+
         </table>
     </div>
 </body>
