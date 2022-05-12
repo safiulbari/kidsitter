@@ -77,9 +77,10 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
 
                         echo $Jrow['username'];
                         ?>
-
-                        <?php
-                        ?>
+                    </td>
+                    <td> <?php echo $row['salary_range']; ?></td>
+                    <?php
+                    ?>
                 </tr>
 
 
