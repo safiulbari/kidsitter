@@ -13,7 +13,7 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/jobs_body.css">
-    <title>Kidsitter</title>
+    <title>Job List</title>
 </head>
 
 <body>
@@ -35,3 +35,57 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
 
         </div>
     </div>
+    <div class="table_responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th> JOB ID</th>
+                    <th>Title</th>
+                    <th>Posted by</th>
+                    <th>Salary Range</th>
+                    <th>Details</th>
+                    <th>Relation with kid</th>
+                    <th>Kid's age</th>
+                    <th>Address</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "SELECT *
+                        FROM jobs";
+                $result = mysqli_query($connect, $sql);
+                $count = mysqli_num_rows($result);
+                $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                foreach ($row as $row)
+                ?>
+                <tr>
+
+                    <td> <?php echo $row['job_id']; ?> </td>
+                    <td> <?php echo $row['title']; ?> </td>
+                    <td>
+                        <?php
+                        $c_id = $row['client_id'];
+                        $sql = "SELECT username
+                        FROM users
+                        WHERE user_id=(SELECT user_id
+                        FROM clients
+                        WHERE client_id = '$c_id')";
+
+                        $result = mysqli_query($connect, $sql);
+                        $Jrow = mysqli_fetch_assoc($result);
+
+                        echo $Jrow['username'];
+                        ?>
+
+                        <?php
+                        ?>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
