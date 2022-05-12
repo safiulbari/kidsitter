@@ -79,6 +79,10 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
                         ?>
                     </td>
                     <td> <?php echo $row['salary_range']; ?></td>
+                    <td> <?php echo $row['details']; ?></td>
+                    <td> <?php echo $row['R_with_client']; ?></td>
+                    <td> <?php echo $row['kid_age']; ?></td>
+                    <td> <?php echo $row['address']; ?></td>
                     <?php
                     ?>
                 </tr>
