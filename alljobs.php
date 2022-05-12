@@ -57,35 +57,37 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
                 $result = mysqli_query($connect, $sql);
                 $count = mysqli_num_rows($result);
                 $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                foreach ($row as $row)
+                foreach ($row as $row) {
                 ?>
-                <tr>
+                    <tr>
 
-                    <td> <?php echo $row['job_id']; ?> </td>
-                    <td> <?php echo $row['title']; ?> </td>
-                    <td>
-                        <?php
-                        $c_id = $row['client_id'];
-                        $sql = "SELECT username
+                        <td> <?php echo $row['job_id']; ?> </td>
+                        <td> <?php echo $row['title']; ?> </td>
+                        <td>
+                            <?php
+                            $c_id = $row['client_id'];
+                            $sql = "SELECT username
                         FROM users
                         WHERE user_id=(SELECT user_id
                         FROM clients
                         WHERE client_id = '$c_id')";
 
-                        $result = mysqli_query($connect, $sql);
-                        $Jrow = mysqli_fetch_assoc($result);
+                            $result = mysqli_query($connect, $sql);
+                            $Jrow = mysqli_fetch_assoc($result);
 
-                        echo $Jrow['username'];
-                        ?>
-                    </td>
-                    <td> <?php echo $row['salary_range']; ?></td>
-                    <td> <?php echo $row['details']; ?></td>
-                    <td> <?php echo $row['R_with_client']; ?></td>
-                    <td> <?php echo $row['kid_age']; ?></td>
-                    <td> <?php echo $row['address']; ?></td>
-                    <?php
-                    ?>
-                </tr>
+                            echo $Jrow['username'];
+                            ?>
+                        </td>
+                        <td> <?php echo $row['salary_range']; ?></td>
+                        <td> <?php echo $row['details']; ?></td>
+                        <td> <?php echo $row['R_with_client']; ?></td>
+                        <td> <?php echo $row['kid_age']; ?></td>
+                        <td> <?php echo $row['address']; ?></td>
+
+                    </tr>
+                <?php
+                } ?>
+
 
 
             </tbody>
