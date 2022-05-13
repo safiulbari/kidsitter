@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2022 at 10:52 PM
+-- Generation Time: May 14, 2022 at 12:34 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -157,15 +157,17 @@ CREATE TABLE `sitter` (
   `license_nmbr` varchar(100) DEFAULT NULL,
   `phone_nmbr` varchar(11) DEFAULT NULL,
   `experience` varchar(100) DEFAULT NULL,
-  `expertise` longtext DEFAULT NULL
+  `expertise` longtext DEFAULT NULL,
+  `sitter_name` varchar(20) DEFAULT NULL,
+  `sitter_address` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sitter`
 --
 
-INSERT INTO `sitter` (`sitter_id`, `user_id`, `approve`, `license_nmbr`, `phone_nmbr`, `experience`, `expertise`) VALUES
-(1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `sitter` (`sitter_id`, `user_id`, `approve`, `license_nmbr`, `phone_nmbr`, `experience`, `expertise`, `sitter_name`, `sitter_address`) VALUES
+(1, 6, NULL, '1233', '01786223412', '2', 'medic, carer, amazing mother, child expert', 'Mst. Mahera Khatun', 'Khilgoan, Taltola, Dhaka');
 
 -- --------------------------------------------------------
 
