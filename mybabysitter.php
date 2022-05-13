@@ -45,6 +45,14 @@
         background-color: #04AA6D;
         color: white;
         }
+
+        .profile_view_section{
+            display: none;
+            margin: 20px;
+            border: 2px solid #000;
+            padding: 20px;
+        }
+        
     </style>
 </head>
 
@@ -74,12 +82,16 @@
                 extract($rows);
     ?>
         <tr>
-            <td><?php echo "$sitter_name";?></td>
+            <td><?php echo "$sitter_name <span style='display:none' id='s_id'>$sitter_id</span>";?></td>
             <td><?php echo "$phone_nmbr"?></td>
             <td>
-                <button>View Profile</button>
+                <button id="view">View Profile</button>
             </td>
         </tr>
 
     </table>
     <?php } ?>
+
+    <div class="profile_view_section"></div>
+
+    
