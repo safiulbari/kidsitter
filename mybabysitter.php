@@ -94,4 +94,12 @@
 
     <div class="profile_view_section"></div>
 
-    
+    <script>
+
+        const btn = document.querySelector("#view");
+        btn.addEventListener('click', function() {
+            
+
+
+        });
+    </script>
