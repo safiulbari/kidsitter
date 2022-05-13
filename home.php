@@ -59,7 +59,7 @@
             <div>
                 <h1 class="title"><?php echo "$title";?></h1>
                 <!-- <p class="applied">21 Applied</p> -->
-            </div>
+            </div> 
             <div class="btn-group">
                 <?php echo "<a href='job_details_client.php?job_id=$job_id' class='primary-btn'>Details</a>"; ?>
                 <?php echo "<a href='job_delete_client.php?job_id=$job_id' class='secondary-btn'>Delete</a>"; ?>

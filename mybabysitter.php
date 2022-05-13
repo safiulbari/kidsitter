@@ -20,6 +20,32 @@
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/jobs_body.css">
     <title>Kidsitter</title>
+    <style>
+        .table {
+        margin: 0 20jpx;
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        padding:0 20px;
+        }
+
+        .table td, .table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        }
+
+        .table tr:nth-child(even){background-color: #f2f2f2;}
+
+        .table tr:hover {background-color: #ddd;}
+
+        .table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,22 +57,29 @@
     </div>
     <div class="navbg">
         <div class="nav">
-            <a class="link flex-center" href="#">Jobs</a>
+            <a class="link flex-center" href="./home.php">Jobs</a>
             <a class="link flex-center" href="#">Interviews</a>
             <a class="link link-active flex-center" href="#">My BabySitter</a>
             <a class="link flex-center" href="#">Payment</a>
             <a class="link flex-center" href="#">Babyfood</a>
             <a class="link flex-center">My Profile</a>
+        </div>
+    </div>
+    <br>
 
-            <?php
+    <table class="table">
+    <?php
             // generate all job post using php 
             while( $rows = mysqli_fetch_array( $results ) ) {
                 extract($rows);
-        ?>
-            
+    ?>
+        <tr>
+            <td><?php echo "$sitter_name";?></td>
+            <td><?php echo "$phone_nmbr"?></td>
+            <td>
+                <button>View Profile</button>
+            </td>
+        </tr>
 
-
-        </div>
-    </div>
-
+    </table>
     <?php } ?>
