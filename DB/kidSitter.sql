@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2022 at 10:26 PM
+-- Generation Time: May 13, 2022 at 10:52 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -81,21 +81,21 @@ CREATE TABLE `interviews` (
   `interview_no` int(11) NOT NULL,
   `job_id` int(11) DEFAULT NULL,
   `sitter_id` int(11) DEFAULT NULL,
-  `selection` varchar(20) DEFAULT NULL,
+  `client_id` int(11) DEFAULT NULL,
   `date` varchar(255) DEFAULT NULL,
   `time` varchar(255) DEFAULT NULL,
   `link` char(1) DEFAULT NULL,
-  `status1` char(1) DEFAULT NULL
+  `status` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `interviews`
 --
 
-INSERT INTO `interviews` (`interview_no`, `job_id`, `sitter_id`, `selection`, `date`, `time`, `link`, `status1`) VALUES
-(1, 1, 1, NULL, NULL, NULL, NULL, NULL),
-(2, 4, 1, NULL, NULL, NULL, NULL, NULL),
-(3, 7, 1, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `interviews` (`interview_no`, `job_id`, `sitter_id`, `client_id`, `date`, `time`, `link`, `status`) VALUES
+(1, 1, 1, 2, NULL, NULL, NULL, 1),
+(2, 4, 1, 1, NULL, NULL, NULL, NULL),
+(3, 7, 1, 3, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -142,7 +142,7 @@ CREATE TABLE `jobs` (
 --
 
 INSERT INTO `jobs` (`job_id`, `client_id`, `job_day`, `title`, `details`, `R_with_client`, `kid_age`, `salary_range`, `address`, `completed`, `SelectSitter_id`, `payment_status`) VALUES
-(19, 2, '5', 'Looking for a babysitter for 4 years boy', 'I was actually looking for child caring person who can control my little cute boy', 'Mother', 6, '4000-6000', '6 no road, Bashudhara RA, Dhaka', '', 0, '');
+(22, 2, '6', 'Looking for baby fruit', ' Looking for baby sitter', 'Father', 12, '4000-6000', 'badda', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -282,7 +282,7 @@ ALTER TABLE `jobpayment`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `sitter`
