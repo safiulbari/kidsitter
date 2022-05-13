@@ -107,7 +107,7 @@
                     let name = myObj.content[0].sitter_name;
                     let address = myObj.content[0].sitter_address;
                     let experience = myObj.content[0].experience;
-                    let phone_number = myObj.content[0].phone_numbr;
+                    let phone_number = myObj.content[0].phone_nmbr;
                     let expertise = myObj.content[0].expertise;
                     view.style.display = "block";
                     view.innerHTML = "<b>Name: </b>" + name + "<br><br>" + "<b>Address: </b>" + address + "<br><br>" + "<b>Experience: </b>" + experience + " years" + "<br><br>" + "<b>Expertise: </b>" + expertise + "<br><br>" + "<b>Phone Number: </b>" + phone_number + "<br><br>" ;
