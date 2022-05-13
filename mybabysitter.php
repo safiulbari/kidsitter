@@ -6,7 +6,7 @@
 		or die("Can not connect");
 
 
-    $results = mysqli_query( $connect, "SELECT * FROM jobs where client_id = $client_id" )
+    $results = mysqli_query( $connect, "SELECT * FROM interviews INNER JOIN sitter ON interviews.sitter_id = sitter.sitter_id  where interviews.client_id = $client_id AND interviews.status=1")
 		or die("Can not execute query");
 
 ?>
@@ -36,8 +36,17 @@
             <a class="link link-active flex-center" href="#">My BabySitter</a>
             <a class="link flex-center" href="#">Payment</a>
             <a class="link flex-center" href="#">Babyfood</a>
-            <a class="link flex-center" href="http://localhost/kidSitter/kidsitter/clientProfile.php">My Profile</a>
+            <a class="link flex-center">My Profile</a>
+
+            <?php
+            // generate all job post using php 
+            while( $rows = mysqli_fetch_array( $results ) ) {
+                extract($rows);
+        ?>
             
+
 
         </div>
     </div>
+
+    <?php } ?>
