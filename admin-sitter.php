@@ -52,10 +52,11 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
             <tbody>
                 <?php
                 $sql = "SELECT *
-                        FROM users WHERE user_id=7";
+                        FROM users WHERE role='sitter'";
                 $result = mysqli_query($connect, $sql);
-                $count = mysqli_num_rows($result);
+
                 $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
                 foreach ($row as $row) {
                 ?>
                     <tr>
@@ -63,9 +64,27 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
                         <td> <?php echo $row['first_name']; ?> </td>
                         <td> <?php echo $row['last_name']; ?> </td>
                         <td> <?php echo $row['email']; ?> </td>
+                        <?php $u_id = $row['user_id']; ?>
 
+                        <?php
 
+                        $sql = "SELECT *
+                        FROM sitter
+                        WHERE user_id=(SELECT user_id
+                        FROM users
+                        WHERE user_id = $u_id)";
 
+                        $result = mysqli_query($connect, $sql);
+                        $Jrow = mysqli_fetch_assoc($result);
+
+                        // echo $Jrow['phone_nmbr'];
+                        ?>
+                        <td>
+                            <?php echo $Jrow['phone_nmbr'] ?>
+                        </td>
+                        <td>
+                            <?php echo $Jrow['license_nmbr'] ?>
+                        </td>
                     </tr>
                 <?php
                 } ?>
