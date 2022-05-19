@@ -45,6 +45,11 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
                     Interview start :<br>
                     <input type="time" class="form-control" name="timee">
                 </div>
+                <div class="mb-3">
+                    Goolge Link :<br>
+                    <input type="text" class="form-control" name="link">
+                </div>
+                <button type="submit" name="done">Submit</button>
             </div>
         </form>
     </div>
