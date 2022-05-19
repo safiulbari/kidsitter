@@ -10,4 +10,5 @@ if (isset($_POST['done'])) {
     mysqli_query($connect, "INSERT INTO interview (sitter_id, job_id, timee, datee, link)
      VALUES(1, 10, '$time', '$date', '$link')")
         or die("cant execute query");
+    echo "<p>Interview Information Sent to the babySitter</p>";
 }
