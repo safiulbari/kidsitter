@@ -33,6 +33,21 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
             <a class="link flex-center" href="#">My Profile</a>
         </div>
     </div>
+    <div class="body-area">
+        <form action="timedb.php" method="post">
+            <div class="row">
+
+                <div class="mb-3">
+                    Interview Date:<br>
+                    <input type="date" class="form-control" name="datee">
+                </div>
+                <div class="mb-3">
+                    Interview start :<br>
+                    <input type="time" class="form-control" name="timee">
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
