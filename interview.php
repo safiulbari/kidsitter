@@ -82,7 +82,7 @@
         <div class="nav">
             <a class="link flex-center" href="./home.php">Jobs</a>
             <a class="link flex-center link-active" href="#">Interviews</a>
-            <a class="link flex-center" href="#">My BabySitter</a>
+            <a class="link flex-center" href="./mybabysitter.php">My BabySitter</a>
             <a class="link flex-center" href="#">Payment</a>
             <a class="link flex-center" href="#">Babyfood</a>
             <a class="link flex-center">My Profile</a>
@@ -120,18 +120,29 @@
     <div class="modal"></div>
 
     <script>
+        const hire = document.querySelector("#hire");
+        const reject = document.querySelector("#reject");
 
-        const btn = document.querySelector("#hire");
-        btn.addEventListener('click', function() {
+        hire.addEventListener('click', function() {
             let interview_id = document.querySelector("#interview_id");
             let id = interview_id.innerHTML;
 
-            fetch('./interview_backend.php?sitter_id='+id)
+            fetch('./interview_backend.php?interview_no='+id)
                 .then(response => response.json())
                 .then(myObj => {
-                    console.log("This is called");
+                    
                 });
+        });
 
+        reject.addEventListener('click', function() {
+            let interview_id = document.querySelector("#interview_id");
+            let id = interview_id.innerHTML;
 
+            setTimeout("location.reload(true);",1500)
+
+            fetch('./interview_backend2.php?interview_no='+id)
+                .then(response => response.json())
+                .then(myObj => {});
+            
         });
     </script>
