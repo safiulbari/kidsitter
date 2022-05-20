@@ -103,9 +103,9 @@
                 extract($rows);
     ?>
         <tr>
-            <td><?php echo "$date <span style='display:none' id='s_id'>$interview_no</span>";?></td>
+            <td><?php echo "$date <span style='display:none' id='interview_id'>$interview_no</span>";?></td>
             <td><?php echo "$time"?></td>
-            <td><?php echo "<a href='$link'>Interview Link<a>"?></td>
+            <td><?php echo "<a href='$link' target='_blank'>Interview Link<a>"?></td>
             
             <td>
                 <button id="hire">Hire</button>
@@ -117,30 +117,21 @@
     <?php } ?>
     </table>
 
-    <div class="profile_view_section"></div>
+    <div class="modal"></div>
 
-    <!-- <script>
+    <script>
 
-        const btn = document.querySelector("#view");
+        const btn = document.querySelector("#hire");
         btn.addEventListener('click', function() {
-            let s_id = document.querySelector("#s_id");
-            let id = s_id.innerHTML; 
-            let view = document.querySelector(".profile_view_section");
-            fetch('./babysitter_profile_view_backend.php?sitter_id='+id)
+            let interview_id = document.querySelector("#interview_id");
+            let id = interview_id.innerHTML;
+
+            fetch('./interview_backend.php?sitter_id='+id)
                 .then(response => response.json())
                 .then(myObj => {
-                    let name = myObj.content[0].sitter_name;
-                    let address = myObj.content[0].sitter_address;
-                    let experience = myObj.content[0].experience;
-                    let phone_number = myObj.content[0].phone_nmbr;
-                    let expertise = myObj.content[0].expertise;
-                    view.style.display = "block";
-                    view.innerHTML = "<b>Name: </b>" + name + "<br><br>" + "<b>Address: </b>" + address + "<br><br>" + "<b>Experience: </b>" + experience + " years" + "<br><br>" + "<b>Expertise: </b>" + expertise + "<br><br>" + "<b>Phone Number: </b>" + phone_number + "<br><br>" ;
-
-                    // document.querySelector('#details').innerHTML = myObj.content[0].FIRST_NAME + ' ' + myObj.content[0].LAST_NAME;
-
+                    console.log("This is called");
                 });
 
 
         });
-    </script> -->
+    </script>
