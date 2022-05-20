@@ -36,6 +36,7 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
     <div class="body-area">
         <form action="timedb.php" method="post">
             <div class="row">
+                <?php echo isset($_GET['msg']) ? '<p style="margin-bottom: 20px; color: red">' . $_GET['msg'] . '</p>' : ''; ?>
 
                 <div class="mb-3">
                     Interview Date:<br>
@@ -49,6 +50,7 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
                     Goolge Link :<br>
                     <input type="text" class="form-control" name="link">
                 </div>
+
                 <button type="submit" name="done">Submit</button>
             </div>
         </form>
