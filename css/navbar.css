@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Epilogue:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+    font-family: Epilogue;
+    font-size: 18px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar button {
+    height: 38px;
+    width: 90px;
+    left: 1084px;
+    top: 27px;
+    border: 1px solid #9A9A9A;
+    border-radius: 6px;
+    padding: 10px, 16px, 10px, 16px;
+    background-color: white;
+    margin-right: 35px;
+    cursor: pointer;
+}
+
+.topbar button:hover {
+    background-color: #00ADEF;
+    color: white;
+    border: none;
+}
+
+.logo {
+    padding-left: 30px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.navbg {
+    background-color: #00ADEF;
+    height: 52px;
+}
+
+
+/* navigation bar */
+
+.nav {
+    margin: 0 35px;
+    height: 52px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    padding: 0 42px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.link-active {
+    border-bottom: 2px solid #EF1C23;
+    background-color: #058FC4;
+}
+
+.link:hover {
+    border-bottom: 2px solid #EF1C23;
+    background-color: #058FC4;
+}
