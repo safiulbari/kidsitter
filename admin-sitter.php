@@ -51,13 +51,15 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
             </thead>
             <tbody>
                 <?php
+                $status = 'OK';
+                $content = [];
                 $sql = "SELECT *
                         FROM users WHERE role='sitter'";
                 $result = mysqli_query($connect, $sql);
 
                 $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-                foreach ($row as $row) {
+                    foreach ($row as $row) {
                 ?>
                     <tr>
 
@@ -86,6 +88,8 @@ $connect = mysqli_connect(HOST, USER, PASS, DB)
                             <?php echo $Jrow['license_nmbr'] ?>
                         </td>
                     </tr>
+
+
                 <?php
                 } ?>
 

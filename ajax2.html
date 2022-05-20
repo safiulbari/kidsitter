@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/jobs_body.css">
+    <title>Kidsitter</title>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="logo">
+            <img src="./img/logo.svg" alt="">
+        </div>
+        <button>Log out</button>
+    </div>
+    <div class="navbg">
+        <div class="nav">
+            <a class="link link-active flex-center" href="#">View All babySitter</a>
+            <a class="link flex-center" href="#"></a>
+            <a class="link flex-center" href="#">BabySitter</a>
+            <a class="link flex-center" href="#">Payment</a>
+            <a class="link flex-center" href="#">Babyfood</a>
+            <a class="link flex-center" href="#">My Profile</a>
+        </div>
+    </div>
+    <table border="1">
+        <thead>
+            <tr>
+
+                <th>first name</th>
+                <th>last name</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>License number</th>
+
+
+            </tr>
+        </thead>
+    </table>
+
+    <p id="msgHolder"></p>
+    <p id="details"></p>
+    <button id="btnGetData">Get Data</button>
+
+    <script>
+
+        let btn = document.querySelector('#btnGetData');
+        btn.addEventListener('click', function () {
+
+
+            let msgHolder = document.querySelector('#msgHolder');
+            msgHolder.innerHTML = "";
+            let todo_id = prompt("Please enter option:");
+            fetch('http://localhost/kidsitter/ajax2front.php')
+                .then(response => response.json())
+                .then(myObj => {
+                    console.log(myObj);
+
+                    for (let index = 0; index < myObj['content'].length; index++) {
+                        const element = myObj['content'][index];
+                        console.log(element.users.first_name);
+                        console.log(element.sitter.phone_nmbr);
+
+                        document.querySelector('#details').innerHTML += '<br>' + element.users.first_name + ' ' + element.users.last_name + ' ' + element.users.email + ' ' + element.sitter.phone_nmbr;
+
+                    }
+
+
+                    // document.querySelector('#details').innerHTML = myObj['users'].content[1].first_name + ' ' + myObj.content[1].phone_nmbr;
+
+                    // msgHolder.innerHTML = JSON.stringify(myObj);
+                    // msgHolder.innerHTML = myObj.status;
+                    //document.querySelector('#details').innerHTML = myObj.content[1].first_name + ' ' + myObj.content[1].phone_nmbr;
+
+                });
+        });
+
+    </script>
+
+
+</body>
+
+</html>
