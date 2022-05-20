@@ -132,17 +132,17 @@
                 .then(myObj => {
                     
                 });
+            setTimeout("location.reload();",400);
         });
 
         reject.addEventListener('click', function() {
             let interview_id = document.querySelector("#interview_id");
             let id = interview_id.innerHTML;
 
-            setTimeout("location.reload(true);",1500)
-
+            
             fetch('./interview_backend2.php?interview_no='+id)
                 .then(response => response.json())
                 .then(myObj => {});
-            
+            setTimeout("location.reload();",400);
         });
     </script>

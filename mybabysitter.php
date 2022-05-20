@@ -66,7 +66,7 @@
     <div class="navbg">
         <div class="nav">
             <a class="link flex-center" href="./home.php">Jobs</a>
-            <a class="link flex-center" href="#">Interviews</a>
+            <a class="link flex-center" href="./interview.php">Interviews</a>
             <a class="link link-active flex-center" href="#">My BabySitter</a>
             <a class="link flex-center" href="#">Payment</a>
             <a class="link flex-center" href="#">Babyfood</a>
@@ -89,8 +89,9 @@
             </td>
         </tr>
 
-    </table>
+    
     <?php } ?>
+    </table>
 
     <div class="profile_view_section"></div>
 
@@ -101,6 +102,8 @@
             let s_id = document.querySelector("#s_id");
             let id = s_id.innerHTML; 
             let view = document.querySelector(".profile_view_section");
+
+            console.log(id);
             fetch('./babysitter_profile_view_backend.php?sitter_id='+id)
                 .then(response => response.json())
                 .then(myObj => {
