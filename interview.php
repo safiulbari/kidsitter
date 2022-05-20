@@ -41,8 +41,8 @@
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
-        background-color: #04AA6D;
-        color: white;
+        background-color: white;
+        color: black;
         }
 
         .profile_view_section{
@@ -92,6 +92,7 @@
 
     <table class="table">
     <tr>
+        <th>Sl no</th>
         <th>Interview Date</th>
         <th>Time</th>
         <th>Meet Link</th>
@@ -102,10 +103,12 @@
             while( $rows = mysqli_fetch_array( $results ) ) {
                 extract($rows);
     ?>
+    <!-- <span style='display:none' id='interview_id'>$interview_no</span> -->
         <tr>
-            <td><?php echo "$date <span style='display:none' id='interview_id'>$interview_no</span>";?></td>
+            <td><?php echo "<span id='interview_id'>$interview_no</span>";?></td>
+            <td><?php echo "$date";?></td>
             <td><?php echo "$time"?></td>
-            <td><?php echo "<a href='$link' target='_blank'>Interview Link<a>"?></td>
+            <td><?php echo "<a href='$link' target='_blank'>$link<a>"?></td>
             
             <td>
                 <button id="hire">Hire</button>
