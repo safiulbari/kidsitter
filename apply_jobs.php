@@ -50,13 +50,6 @@
         <th>Kid age</th>
         <th>Salary Range</th>
         <th>Job Address</th>
-
-        <th>License Number</th>
-        <th>Phone</th>
-        <th>Experience</th>
-        <th>Expertise</th>
-        <th>Sitter Name</th>
-        <th>Address</th>
       </tr>
     </thead>
     <tbody>
