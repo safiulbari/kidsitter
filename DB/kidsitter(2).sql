@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2022 at 01:58 PM
+-- Generation Time: May 21, 2022 at 04:02 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -55,6 +55,8 @@ CREATE TABLE `appointments` (
 CREATE TABLE `clients` (
   `client_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `address` varchar(255) NOT NULL,
   `phone_nmbr` varchar(11) DEFAULT NULL,
   `division` varchar(11) DEFAULT NULL,
   `district` varchar(11) DEFAULT NULL,
@@ -65,11 +67,11 @@ CREATE TABLE `clients` (
 -- Dumping data for table `clients`
 --
 
-INSERT INTO `clients` (`client_id`, `user_id`, `phone_nmbr`, `division`, `district`, `DOB`) VALUES
-(1, 2, NULL, NULL, NULL, NULL),
-(2, 4, NULL, NULL, NULL, NULL),
-(3, 5, NULL, NULL, NULL, NULL),
-(4, 8, NULL, NULL, NULL, NULL);
+INSERT INTO `clients` (`client_id`, `user_id`, `name`, `address`, `phone_nmbr`, `division`, `district`, `DOB`) VALUES
+(1, 2, 'Abdus Fahim', 'Gulshan-2, Dhaka', '01987626565', NULL, NULL, '1993-05-05'),
+(2, 4, 'Nishita Kabir', 'Badda, Dhaka', '01762834768', NULL, NULL, '1990-03-23'),
+(3, 5, 'Azad Masud', 'Dhannmodi 27, Dhaka', '01762283473', NULL, NULL, '1993-05-05'),
+(4, 8, 'Ruksana Kabir', 'Savar, Dhaka', '01987363647', NULL, NULL, '1990-03-23');
 
 -- --------------------------------------------------------
 
@@ -94,7 +96,7 @@ CREATE TABLE `interviews` (
 
 INSERT INTO `interviews` (`interview_no`, `job_id`, `sitter_id`, `client_id`, `date`, `time`, `link`, `status`) VALUES
 (1, 1, 1, 2, '22-05-22', '05:30 pm', 'https://meet.google.com/wyk-pbnk-tcf', 1),
-(2, 1, 2, 2, '22-05-22', '07:30 pm', 'https://meet.google.com/wyk-pbnk-tcf', 1),
+(2, 1, 2, 2, '22-05-22', '07:30 pm', 'https://meet.google.com/wyk-pbnk-tcf', NULL),
 (3, 1, 3, 2, '22-05-22', '4:30 pm', 'https://meet.google.com/wyk-pbnk-tcf', NULL);
 
 -- --------------------------------------------------------
